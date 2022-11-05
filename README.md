@@ -1,13 +1,10 @@
-# Hubspot-Challenge
-
-HubSpot Project
-You're in charge of implementing a new inbox view. You're given a set of data that consists of your userId, a list of users that you have communicated with and a list of messages between you and those users. From this data, we need to generate a list of conversations for your user.
+# HubSpot Project
+You are in charge of implementing a new inbox view. You're given a set of data that consists of your userId, a list of users that you have communicated with and a list of messages between you and those users. From this data, we need to generate a list of conversations for your user.
 
 You can get the raw inbox data by making an HTTP GET request to the dataset API at
-
 https://candidate.hubteam.com/candidateTest/v3/problem/dataset?userKey=984349804cd8bd48b2f5aebc8539
-The data set looks like this:
 
+The data set looks like this:
 {
     "messages": [
         {
@@ -60,9 +57,8 @@ The data set looks like this:
             "firstName": "Michael",
             "lastName": "Crowley",
             "id": 78596
-        }
-    ]
-}
+        } ]}
+		
 Given this input data, we want to create a list of conversations that your user has had with other users. A conversation is defined by the other user you are sharing messages with, the total number of messages sent between the two of you and the most recent message which has been sent. We also expect the conversations to be ordered so that the conversations with the most recent messages appear first.
 
 So given the example input data above, we would expect output which looks like:
@@ -98,22 +94,25 @@ So given the example input data above, we would expect output which looks like:
 Once the input dataset has been transformed into an inbox view, you will need to send the result via an HTTP POST to
 
 https://candidate.hubteam.com/candidateTest/v3/problem/result?userKey=984349804cd8bd48b2f5aebc8539
-Notes
-Timestamps are in milliseconds.
-Messages may not be given in chronological order.
-The most recent message should contain the userId of the user who the message is from.
-Conversations should be in reverse chronological order based on the timestamp of the most recent message in the conversation.
-API Guidelines
+
+## Notes
+- Timestamps are in milliseconds.
+- Messages may not be given in chronological order.
+- The most recent message should contain the userId of the user who the message is from.
+- Conversations should be in reverse chronological order based on the timestamp of the most recent message in the conversation.
+
+## API Guidelines
 If your answer is correct, the API will return 200 OK. If the request is malformatted or incorrect, the API will return 400 along with a message indicating if the response is of the wrong structure or incorrect.
 
 If you get a 5xx response, let us know and we’ll help you out.
 
 The candidate.hubteam.com domain is set up with a permissive cross-origin policy, so you can POST to it from any location in a browser if you choose to implement in an in-browser JS solution.
 
-Evaluation
-When you’re done, this page will update with a form to upload your code. We’ll evaluate you based on three things:
+## Evaluation
+When youre done, this page will update with a form to upload your code. We will evaluate you based on three things:
 
-First and foremost, if you complete the project within three hours. If you haven't completed the project in three hours, do feel free to continue trying to submit a correct solution though.
-Next, the time from when you click the start button below to the time you submit a correct solution.
-Finally, the quality of code you submit. We’re looking for simplicity, clarity and readability over cleverness or flexbility.
+1. First and foremost, if you complete the project within three hours. If you haven't completed the project in three hours, do feel free to continue trying to submit a correct solution though.
+1. Next, the time from when you click the start button below to the time you submit a correct solution.
+1. Finally, the quality of code you submit. We’re looking for simplicity, clarity and readability over cleverness or flexbility.
+
 We think you should be able to complete this project in a single sitting, so try to allocate a single block if you can.
